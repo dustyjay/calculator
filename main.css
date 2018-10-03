@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    
+    padding: 0;
+}
+
+:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.hide{
+    display: none;
+}
+
+#app{
+    /* background: black; */
+}
+
+.name{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,.1);
+}
+
+.name > div{
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    margin: auto;
+    height: 80%;
+    display: flex;
+    background: #f3f3f3;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.15);
+    border-radius: 3px;
+
+}
+
+.name form{
+    width: 80%;
+    margin: auto;
+}
+
+.name input{
+    border: none;
+    background: none;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 5px;
+    font-size: 24px;
+    width: 70%;
+    max-width: 500px;
+}
+
+.name button{
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    background: none;
+    color: #7d7d7d;
+    padding: 5px 20px;
+    margin-left: 20px;
+    font-size: 24px;
+    border-radius: 0;
+    transition: 400ms ease-in-out;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.name button:hover{
+    border-radius: 3px;
+}
+
+.in-name p{
+    font-size: 24px;
+    color: #999;
+    padding: 20px;
+}
+
+.calculator{
+    width: 80%;
+    min-width: 300px;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 5vh;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cal-body{
+    margin-top: 15px;
+}
+
+.calculator table{
+    width: 100%;
+}
+
+.calculator td{
+    width: 25%;
+}
+
+.calculator .display{
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 10px 5px;
+    color: #7d7d7d;
+}
+
+.display p:last-child{
+    text-align: right;
+    margin-top: 30px;
+}
+
+.calculator button{
+    color: #999;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.calculator td > div{
+    margin-bottom: 15px;
+}
+
+.calculator tr td:last-child button{
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.calculator tr td:last-child div{
+    margin-left: auto
+}
+
+.calculate button{
+    width: 100%;
+    border-radius: 3px;
+}
