@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator - dusty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="main.js"></script>
+</head>
+<body onload="loaded()">
+
+    <div id="app">
+        <div v-if="is_name" class="name">
+            <div>
+                <form name="local" method="POST" @submit.prevent="storename">
+                    <input type="text" placeholder="Enter your name" name="name" required/>
+                    <button>BEGIN</button>
+                </form>
+            </div>
+        </div>
+
+        <div v-else>
+            <div class="in-name">
+                <p>Welcome <span v-if="!first_time">back</span> {{ name }}</p>
+            </div>
+
+            <div class="calculator">
+                <div class="display" v-if='!off'>
+                    <p v-text="display_text"></p>
+                    <p v-text="sum"></p>
+                </div>
+                <div class="cal-body">
+                    <table>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button @click="punch('on', 'power')" class="on" v-if="off">ON</button>
+                                    <button @click="punch('off', 'power')" class="on" v-else>OFF</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="c"  @click="punch('c', 'fn')">C</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="ce" @click="punch('ce', 'fn')">CE</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="percent" @click="punch('%', 'percent')">%</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button class="7" @click="punch('7', 'num')">7</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="8" @click="punch('8', 'num')">8</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="9" @click="punch('9', 'num')">9</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="plus" @click="punch('+', 'action')">+</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button class="4" @click="punch('4','num')">4</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="5" @click="punch('5','num')">5</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="6" @click="punch('6', 'num')">6</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="minus" @click="punch('-', 'action')">-</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button class="1" @click="punch('1', 'num')">1</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="2" @click="punch('2', 'num')">2</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="3" @click="punch('3', 'num')">3</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="times" @click="punch('*', 'action')">&times;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <button class="decimal" @click="punch('.','dot')">.</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="0" @click="punch('0', 'num')">0</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="00" @click="punch('00', 'num')">00</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="divide" @click="punch('/', 'action')">/</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- <div class="calculate">
+                        <button @click="punch('=', 'enter')">ENTER</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
